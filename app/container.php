@@ -1,9 +1,11 @@
 <?php
 
+use function Di\get;
 use Slim\Views\Twig;
+use comrade\Models\Product;
 use Slim\Views\TwigExtension;
 use Interop\Container\ContainerInterface;
-use function Di\get;
+
 
 return [
     Twig::class => function(ContainerInterface $c){
@@ -17,5 +19,10 @@ return [
         ));
 
         return $twig;
+    },
+
+    Product::class => function(ContainerInterface $c){
+        return new Product;
     }
+    
 ];
