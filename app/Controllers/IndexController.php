@@ -2,10 +2,15 @@
 
 namespace comrade\Controllers;
 
+use Slim\Views\Twig;
+use Psr\Http\Message\ResponseInterface as Response;
+use Psr\Http\Message\ServerRequestInterface as Request;
+
+
 class IndexController
 {
-    public function index()
+    public function index(Request $request, Response $response, Twig $view)
     {
-        die('hello world');
+        return $view->render($response, 'index.twig');
     }
 }

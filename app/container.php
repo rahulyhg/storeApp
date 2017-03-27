@@ -3,11 +3,11 @@
 use Slim\Views\Twig;
 use Slim\Views\TwigExtension;
 use Interop\Container\ContainerInterface;
+use function Di\get;
 
 return [
-    'router' => get(Slim\Route::class),
     Twig::class => function(ContainerInterface $c){
-        $twig = new Twig(implode(DIRECTORY_SEPARATOR, [APP_DIR, 'resources', 'views']), [
+        $twig = new Twig(implode(DIRECTORY_SEPARATOR, [APP_DIR, 'app', 'Views']), [
             'cache' => false
         ]);
 
@@ -15,5 +15,7 @@ return [
             $c->get('router'),
             $c->get('request')->getUri()
         ));
+
+        return $twig;
     }
 ];
