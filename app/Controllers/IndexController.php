@@ -1,15 +1,11 @@
 <?php
 
 namespace comrade\Controllers;
-use DI\ContainerBuilder;
-use DI\Bridge\Slim\App as DiBridge;
 
-class IndexController extends DiBridge
+class IndexController
 {
-    protected function configureContainer(ContainerBuilder $builder)
+    public function index()
     {
-        $builder->addDefinitions([
-            'setting.displayErrorDetails' => true,
-        ]);
+        die('hello world');
     }
 }
