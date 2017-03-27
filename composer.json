@@ -1,0 +1,19 @@
+{
+    "name": "comrade/store",
+    "description": "Simple store application",
+    "require": {
+        "slim/slim": "^3.8",
+        "slim/twig-view": "^2.2",
+        "php-di/slim-bridge": "^1.0",
+        "j4mie/idiorm": "^1.5"
+    },
+    "autoload": {
+        "psr-4": {"comrade\\": "app/"}
+    },
+    "authors": [
+        {
+            "name": "olegmxjack",
+            "email": "olegmxjack@rambler.ru"
+        }
+    ]
+}
