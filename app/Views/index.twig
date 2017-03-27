@@ -3,3 +3,9 @@
 {% block title %}
 test
 {% endblock %}
+
+{% block body %}
+{% for  product in products %}
+    {{ product.title }}<br><hr>
+{% endfor %}
+{% endblock %}
