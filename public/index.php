@@ -8,7 +8,7 @@ session_start();
 define('ROOT_DIR', __DIR__);
 define('APP_DIR', dirname(__DIR__));
 
-require_once implode(DIRECTORY_SEPARATOR, [APP_DIR, 'vendor', 'autoload']).'.php';
+require_once implode(DIRECTORY_SEPARATOR, [APP_DIR, 'vendor', 'autoload.php']);
 
 ORM::configure(array(
     'connection_string' => 'mysql:host=localhost;dbname=storeapp',
@@ -21,6 +21,6 @@ ORM::configure(array(
 
 $app = new comrade\App();
 
-require_once implode(DIRECTORY_SEPARATOR, [APP_DIR, 'app', 'routes']).'.php';
+require_once implode(DIRECTORY_SEPARATOR, [APP_DIR, 'app', 'routes.php']);
 
 $app->run();

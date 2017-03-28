@@ -17,6 +17,7 @@ return [
             $c->get('router'),
             $c->get('request')->getUri()
         ));
+        $twig->addExtension(new Twig_Extension_Debug());
 
         return $twig;
     },
