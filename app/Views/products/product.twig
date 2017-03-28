@@ -1,0 +1,26 @@
+{% extends 'templates/mainTemp.twig' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-4 col-sm-6">
+        <img src="{{ product.image }}" alt="{{ product.title }} image" title="{{ product.title }}" class="thumbnail img-responsive">
+    </div>
+    <div class="col-md-8 col-sm-6">
+
+        {% if product.stock <= 5 and product.stock > 0 %}
+            <span class="label label-warning">Low stock</span>
+        {% endif %}
+
+        {% if product.stock == 0 %}
+            <span class="label label-danger">Out of stock</span>
+        {% endif %}
+
+        <h3>{{ product.title }}</h3>
+        <p>{{ product.description }}</p>
+
+        {% if product.stock > 0 %}
+        <a href="#" class="btn btn-default btn-sm">Add to cart</a>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
