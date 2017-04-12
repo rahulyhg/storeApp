@@ -15,4 +15,5 @@ class IndexController
         $allProducts = $products->getAll();
         return $view->render($response, 'index.twig', ['products' => $allProducts]);
     }
+    
 }
